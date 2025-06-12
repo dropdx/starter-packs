@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "bierner.emojisense",
+    "editorconfig.editorconfig",
+    "google.geminicodeassist",
+    "vivaxy.vscode-conventional-commits",
+    "joshbolduc.commitlint",
+    "timonwong.shellcheck",
+    "foxundermoon.shell-format",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}

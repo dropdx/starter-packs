@@ -1,0 +1,35 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "dictionaries": [
+    "en_US",
+    "softwareTerms",
+    "typescript",
+    "node",
+    "golang",
+    "python",
+    "bash",
+    "html",
+    "css",
+    "filetypes",
+    "companies",
+    "fonts",
+    "npm",
+    "devenv",
+    "workspace"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "devenv",
+      "path": "./.config/cspell/custom-dicts/devenv.txt",
+      "addWords": true
+    },
+    {
+      "name": "workspace",
+      "path": "./.config/cspell/custom-dicts/workspace.txt",
+      "addWords": true
+    }
+  ],
+  "ignorePaths": ["node_modules/**", "pnpm-lock.yaml", "*.log", "LICENSE"],
+  "words": []
+}
