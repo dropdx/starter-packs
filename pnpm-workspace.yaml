@@ -1,3 +1,10 @@
+packages:
+  - starters/*
+
+linkWorkspacePackages: true
+sideEffectsCache: false
+includeWorkspaceRoot: true
+
 onlyBuiltDependencies:
   - lefthook
   - unrs-resolver

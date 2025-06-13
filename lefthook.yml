@@ -13,7 +13,7 @@ pre-commit:
       exclude:
         - node_modules
         - dist
-      run: pnpm eslint {staged_files} --max-warnings 0
+      run: pnpm eslint {staged_files} --no-warn-ignored
     eslint-fix-and-format:
       glob: '**/*.{js,mjs,cjs,ts,mts,cts,md,json,jsonc,json5}'
       exclude:

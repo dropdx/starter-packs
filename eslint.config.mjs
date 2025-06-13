@@ -5,7 +5,7 @@ import importPlugin from 'eslint-plugin-import';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import { configs as tselintConfigs } from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
 import json from '@eslint/json';
 
@@ -44,7 +44,7 @@ export default defineConfig([
 
   // javascript and typescript
   js.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tselintConfigs.recommended,
   importPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.typescript,
   {
@@ -80,14 +80,13 @@ export default defineConfig([
   // lint JSON files
   {
     files: ['**/*.json'],
-    ignores: ['package-lock.json'],
     language: 'json/json',
     ...json.configs.recommended,
   },
 
   // lint JSONC files
   {
-    files: ['**/*.jsonc', '.vscode/*.json'],
+    files: ['**/*.jsonc', '.vscode/*.json', '**/tsconfig*.json'],
     language: 'json/jsonc',
     ...json.configs.recommended,
   },

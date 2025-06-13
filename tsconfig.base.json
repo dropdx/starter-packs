@@ -20,6 +20,7 @@
       /* "@shared/*": ["./libs/shared/*"] */
     },
     "verbatimModuleSyntax": true /* Ensure emitted JS matches TS import/export syntax exactly. */,
+    "types": ["node"],
 
     /* Type Checking */
     "strict": true /* Enable all strict type-checking options. */,
