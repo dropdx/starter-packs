@@ -9,7 +9,8 @@
   "scripts": {
     "commit": "cz",
     "lint": "eslint .",
-    "start:eslint:inspector": "pnpm dlx @eslint/config-inspector@latest"
+    "start:eslint:inspector": "pnpm dlx @eslint/config-inspector@latest",
+    "create:starter": "chmod +x ./scripts/create-starter.sh && ./scripts/create-starter.sh"
   },
   "dependencies": {},
   "devDependencies": {

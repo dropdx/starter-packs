@@ -23,6 +23,17 @@ const commonFormattingRules = {
   'array-element-newline': ['error', { multiline: true, minItems: 3 }],
 };
 
+const createJSONConfig = (ext, language) => ({
+  files: [`**/*.${ext}`],
+  language,
+  plugins: { json },
+  ...json.configs.recommended,
+  rules: {
+    'no-irregular-whitespace': 'off',
+    'no-control-regex': 'off',
+  },
+});
+
 export default defineConfig([
   {
     // Global ignores, apply to all files
@@ -77,34 +88,10 @@ export default defineConfig([
     },
   },
 
-  // lint JSON files
-  {
-    files: ['**/*.json'],
-    language: 'json/json',
-    ...json.configs.recommended,
-  },
-
-  // lint JSONC files
-  {
-    files: ['**/*.jsonc', '.vscode/*.json', '**/tsconfig*.json'],
-    language: 'json/jsonc',
-    ...json.configs.recommended,
-  },
-
-  // lint JSON5 files
-  {
-    files: ['**/*.json5'],
-    language: 'json/json5',
-    ...json.configs.recommended,
-  },
-
-  // Disabling 'no-irregular-whitespace' rule
-  {
-    files: ['**/*.jsonc', '.vscode/*.json', '**/tsconfig*.json', 'cspell.json'],
-    rules: {
-      'no-irregular-whitespace': 'off',
-    },
-  },
+  // lint JSON,JSONC,JSON5 files
+  createJSONConfig('json', 'json/json'),
+  createJSONConfig('jsonc', 'json/jsonc'),
+  createJSONConfig('json5', 'json/json5'),
 
   // prettier fixes
   eslintConfigPrettierFlat,
