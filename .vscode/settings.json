@@ -233,5 +233,6 @@
     "https://json.schemastore.org/pnpm-workspace.json": [
       "pnpm-workspace.yaml"
     ]
-  }
+  },
+  "editor.renderWhitespace": "all"
 }
