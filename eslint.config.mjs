@@ -1,42 +1,11 @@
-import js from '@eslint/js';
-import markdown from '@eslint/markdown';
-import eslintConfigPrettierFlat from 'eslint-config-prettier/flat';
-import importPlugin from 'eslint-plugin-import';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import { defineConfig } from 'eslint/config';
-import globals from 'globals';
-import { configs as tselintConfigs } from 'typescript-eslint';
-import tsParser from '@typescript-eslint/parser';
-import json from '@eslint/json';
-
-const commonFormattingRules = {
-  'array-bracket-newline': ['error', { multiline: true, minItems: 1 }],
-  'object-curly-newline': [
-    'error',
-    {
-      ObjectExpression: { multiline: true, minProperties: 1 },
-      ObjectPattern: { multiline: true, minProperties: 1 },
-      ImportDeclaration: { multiline: true, minProperties: 3 },
-      ExportDeclaration: { multiline: true, minProperties: 3 },
-    },
-  ],
-  'array-element-newline': ['error', { multiline: true, minItems: 3 }],
-};
-
-const createJSONConfig = (ext, language) => ({
-  files: [`**/*.${ext}`],
-  language,
-  plugins: { json },
-  ...json.configs.recommended,
-  rules: {
-    'no-irregular-whitespace': 'off',
-    'no-control-regex': 'off',
-  },
-});
+import { defineConfig } from 'eslint/config'
+import javascript from './.config/eslint/javascript.mjs'
+import markdown from './.config/eslint/markdown.mjs'
+import json from './.config/eslint/json.mjs'
+import stylistic from './.config/eslint/stylistic.mjs'
 
 export default defineConfig([
   {
-    // Global ignores, apply to all files
     ignores: [
       '**/node_modules/**',
       '**/dist/**',
@@ -45,55 +14,27 @@ export default defineConfig([
       'pnpm-lock.yaml',
     ],
   },
-
   {
-    files: ['eslint.config.mjs'],
+    files: ['**/eslint.config.{js,cjs,mjs,ts,mts,cts}'],
     rules: {
       'import/no-unresolved': 'off',
     },
   },
-
-  // javascript and typescript
-  js.configs.recommended,
-  ...tselintConfigs.recommended,
-  importPlugin.flatConfigs.recommended,
-  importPlugin.flatConfigs.typescript,
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-    languageOptions: {
-      parser: tsParser,
-      globals: { ...globals.node, ...globals.browser },
-      sourceType: 'module',
-    },
+    files: ['**/*.json',
+      '**/*.jsonc',
+      '**/*.json5'],
     rules: {
-      ...commonFormattingRules,
-    },
-    settings: {
-      'import/resolver': {
-        typescript: true,
-        node: true,
-      },
+      'no-irregular-whitespace': 'off',
     },
   },
-
-  // markdown
+  ...stylistic,
+  ...javascript,
+  ...json,
+  ...markdown,
   {
-    files: ['**/*.md'],
-    plugins: {
-      markdown,
-    },
-    language: 'markdown/gfm',
-    languageOptions: {
-      frontmatter: 'yaml',
+    rules: {
+      'no-irregular-whitespace': 'off',
     },
   },
-
-  // lint JSON,JSONC,JSON5 files
-  createJSONConfig('json', 'json/json'),
-  createJSONConfig('jsonc', 'json/jsonc'),
-  createJSONConfig('json5', 'json/json5'),
-
-  // prettier fixes
-  eslintConfigPrettierFlat,
-  eslintPluginPrettierRecommended,
-]);
+])

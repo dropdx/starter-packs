@@ -6,35 +6,25 @@
     "editor.defaultFormatter": "lkrms.inifmt"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.formatOnSave": true,
     "editor.quickSuggestions": {
       "comments": "on",
       "other": "on",
       "strings": "on"
     }
-  },
-  "[properties]": {
-    "editor.defaultFormatter": "jasonlhy.vscode-properties-sorter"
-  },
-  "[python]": {
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    },
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true
   },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format",
@@ -44,26 +34,29 @@
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "conventionalCommits.emojiFormat": "emoji",
   "conventionalCommits.gitmoji": true,
   "conventionalCommits.promptBody": true,
   "conventionalCommits.promptFooter": true,
   "conventionalCommits.promptScopes": true,
-  "conventionalCommits.scopes": ["config", "shared"],
+  "conventionalCommits.scopes": [
+    "config",
+    "shared"
+  ],
   "conventionalCommits.showNewVersionNotes": true,
   "conventionalCommits.storeScopesGlobally": false,
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en,en-US",
   "editor.acceptSuggestionOnEnter": "smart",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.quickSuggestions": {
@@ -71,6 +64,9 @@
     "other": "on",
     "strings": "on"
   },
+  "editor.rulers": [
+    80
+  ],
   "editor.suggest.preview": true,
   "editor.tabCompletion": "on",
   "emojisense.languages": {
@@ -81,7 +77,19 @@
   "emojisense.markupCompletionsEnabled": true,
   "emojisense.showOnColon": true,
   "emojisense.unicodeCompletionsEnabled": true,
+  "eslint.debug": true,
   "eslint.format.enable": true,
+  "eslint.run": "onSave",
+  "eslint.useFlatConfig": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "jsonc",
+    "markdown"
+  ],
   "files.associations": {
     ".czrc": "json",
     ".dockerignore": "ignore",
@@ -92,6 +100,7 @@
     ".gitlab-ci.yml": "yaml",
     ".npmrc": "ini",
     ".nvmrc": "plaintext",
+    ".vscode/*.json": "jsonc",
     "*.bash": "shellscript",
     "*.bat": "bat",
     "*.cfg": "ini",
@@ -155,19 +164,27 @@
   },
   "json.schemas": [
     {
-      "fileMatch": [".czrc"],
+      "fileMatch": [
+        ".czrc"
+      ],
       "url": "https://json.schemastore.org/czrc.json"
     },
     {
-      "fileMatch": ["pyproject.toml"],
+      "fileMatch": [
+        "pyproject.toml"
+      ],
       "url": "https://json.schemastore.org/pyproject.json"
     },
     {
-      "fileMatch": ["Pipfile"],
+      "fileMatch": [
+        "Pipfile"
+      ],
       "url": "https://json.schemastore.org/pipfile.json"
     },
     {
-      "fileMatch": ["Pipfile.lock"],
+      "fileMatch": [
+        "Pipfile.lock"
+      ],
       "url": "https://json.schemastore.org/pipfile-lock.json"
     },
     {
@@ -189,7 +206,12 @@
       "url": "http://json.schemastore.org/package"
     },
     {
-      "fileMatch": ["renovate.json", "renovate.json5", ".renovaterc", ".renovaterc.json"],
+      "fileMatch": [
+        "renovate.json",
+        "renovate.json5",
+        ".renovaterc",
+        ".renovaterc.json"
+      ],
       "url": "https://docs.renovatebot.com/renovate-schema.json"
     }
   ],
@@ -205,7 +227,11 @@
       ".github/workflows/*.yml",
       ".github/workflows/*.yaml"
     ],
-    "https://json.schemastore.org/lefthook.json": ["lefthook.yml"],
-    "https://json.schemastore.org/pnpm-workspace.json": ["pnpm-workspace.yaml"]
+    "https://json.schemastore.org/lefthook.json": [
+      "lefthook.yml"
+    ],
+    "https://json.schemastore.org/pnpm-workspace.json": [
+      "pnpm-workspace.yaml"
+    ]
   }
 }

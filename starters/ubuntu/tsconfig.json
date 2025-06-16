@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./tsconfig.es6.json", // Inherits all common rules
+  "extends": "./tsconfig.starter.json",
   "include": [],
   "references": []
 }

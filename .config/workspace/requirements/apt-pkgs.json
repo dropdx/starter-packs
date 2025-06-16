@@ -1,3 +1,6 @@
 {
-  "requirements": ["jq", "fzf"]
+  "apt-packages": [
+    "jq",
+    "fzf"
+  ]
 }

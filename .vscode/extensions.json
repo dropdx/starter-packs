@@ -7,6 +7,18 @@
     "joshbolduc.commitlint",
     "timonwong.shellcheck",
     "foxundermoon.shell-format",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "karlito40.fix-irregular-whitespace",
+    "dbaeumer.vscode-eslint",
+    "rpinski.shebang-snippets",
+    "visualstudioexptteam.vscodeintellicode",
+    "christian-kohler.path-intellisense",
+    "dragi-ns.paste-fix",
+    "github.vscode-pull-request-github",
+    "github.vscode-github-actions",
+    "github.remotehub"
+  ],
+  "unwantedRecommendations": [
+    "esbenp.prettier-vscode"
   ]
 }
