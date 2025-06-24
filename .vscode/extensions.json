@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "joshbolduc.commitlint",
+    "vivaxy.vscode-conventional-commits",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "github.vscode-github-actions",
+    "github.vscode-pull-request-github",
+    "github.remotehub",
+    "visualstudioexptteam.vscodeintellicode",
+    "christian-kohler.npm-intellisense",
+    "nrwl.angular-console",
+    "dragi-ns.paste-fix",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.remote-repositories",
+    "rpinski.shebang-snippets",
+    "foxundermoon.shell-format",
+    "timonwong.shellcheck",
+    "ms-vscode-remote.remote-wsl"
+  ]
+}
