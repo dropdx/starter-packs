@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json", // Inherits all common rules
+  "compileOnSave": false /* Disable IDE auto-compilation; builds handled by tooling. */,
+  "files": [] /* Important: This tsconfig does not compile any source files itself. */,
+  "compilerOptions": {
+    /* Modules - Default for workspace-level tools/scripts */
+    "module": "CommonJS" /* Default module system for root workspace tools. */,
+    "moduleResolution": "Node10" /* Module resolution for CommonJS. */,
+    "outDir": "./dist" /* Default output directory for workspace-level build. */,
+    "composite": true /* Enable composite project features for IDEs. */,
+    "tsBuildInfoFile": "./.tsbuildinfo" /* Store incremental build info. */
+  },
+  "include": [
+    // Include any root-level TypeScript files for your workspace (e.g., build scripts)
+    "src/**/*.ts",
+    "tests/**/*.ts",
+    "*.ts" // For top-level ts files (like future commitlint.config.ts)
+  ],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"],
+  "references": [
+    // List paths to the tsconfig.json files of all your individual TypeScript projects.
+    // Example placeholders (adjust to your actual app/lib structure):
+    // { "path": "./apps/my-app" },
+    // { "path": "./libs/my-feature" },
+    // { "path": "./tools/my-cli-tool" }
+    { "path": "./starters/ubuntu" }
+  ]
+}

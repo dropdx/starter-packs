@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json", // Inherits all common rules
+  "compilerOptions": {
+    /* Modules */
+    "module": "ESNext" /* Generate ES Modules (ESM6 syntax). */,
+    "moduleResolution": "Bundler" /* Recommended module resolution for modern bundlers (e.g., Webpack, Rollup, Vite). */,
+    // "jsx" is intentionally omitted as requested.
+    "outDir": "./dist" /* Output directory for the compiled package. */,
+    "rootDir": "./src" /* Root directory for package source files. */,
+    "composite": true /* Required for TypeScript Project References. */,
+    "tsBuildInfoFile": ".tsbuildinfo"
+  },
+  "include": [
+    "src/**/*.ts" /* Include all TypeScript files in the 'src' directory of the package. */,
+    "src/**/*.tsx" /* Include TSX files if any, even if JSX is disabled */
+  ],
+  "references": [] /* Leave empty, fill references property in tsconfig.json file */,
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+}

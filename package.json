@@ -4,7 +4,8 @@
   "scripts": {
     "prepare": "pnpm lefthook install",
     "lint": "pnpm eslint .",
-    "fmt": "pnpm eslint . --fix"
+    "fmt": "pnpm eslint . --fix",
+    "create:starter": "chmod +x ./scripts/create-starter.sh && ./scripts/create-starter.sh"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
@@ -16,6 +17,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.29.0",
     "lefthook": "^1.11.14",
-    "lerna": "^8.2.2"
+    "lerna": "^8.2.2",
+    "typescript": "^5.8.3"
   }
 }

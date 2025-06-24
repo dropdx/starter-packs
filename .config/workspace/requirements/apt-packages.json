@@ -1,0 +1,6 @@
+{
+  "apt-packages": [
+    "jq",
+    "fzf"
+  ]
+}

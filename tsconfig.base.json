@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022" /* Set the JavaScript language version for emitted JavaScript. */,
+    "lib": [
+      "ES2022",
+      "DOM"
+    ] /* Specify a set of bundled library declaration files. DOM for browser-compatible utilities. */,
+    "experimentalDecorators": true /* Enable experimental support for TC39 decorators. */,
+    "emitDecoratorMetadata": true /* Emit design-type metadata for decorated declarations. */,
+    "resolveJsonModule": true /* Enable importing .json files. */,
+
+    /* Modules */
+    // Note: 'module' and 'moduleResolution' are NOT specified here.
+    // They will be defined in extending configs (e.g., tsconfig.json or tsconfig.pkb.json)
+    "baseUrl": "./" /* Specify the base directory to resolve non-relative module names. */,
+    "paths": {
+      /* Example: Centralized path aliases for shared libs in a monorepo */
+      /* "@shared/*": ["./libs/shared/*"] */
+    },
+    "verbatimModuleSyntax": true /* Ensure emitted JS matches TS import/export syntax exactly. */,
+    "types": ["node"],
+
+    /* Type Checking */
+    "strict": true /* Enable all strict type-checking options. */,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+
+    /* Emit */
+    "declaration": true /* Generate .d.ts files. */,
+    "declarationMap": true /* Create sourcemaps for d.ts files. */,
+    "sourceMap": true /* Create source map files for emitted JavaScript files. */,
+    "inlineSources": true /* Include source code in sourcemaps. */,
+    "removeComments": false /* Disable emitting comments. */,
+    "noEmitOnError": true /* Disable emitting files if errors occur. */,
+
+    /* Interop Constraints */
+    "esModuleInterop": true /* Emit additional JS to ease CommonJS module importing. */,
+    "forceConsistentCasingInFileNames": true /* Ensure consistent casing in file paths. */,
+    "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. */,
+
+    /* Completeness */
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+  }
+  // 'include', 'exclude', 'files', 'references' are intentionally omitted here.
+  // This base config only defines shared compiler options.
+}
