@@ -19,9 +19,8 @@ starters/ubuntu/
 └── payload/                # [DEPLOYABLE CONTENT] Contains all the files to be deployed by dropdx.
 ├── shell/                  # All shell-related configurations (aliases, functions, completions).
 │   ├── aliases/            # Directory for individual alias files (e.g., git.sh, dev.sh).
-│   ├── aliases.sh          # Orchestrator script to load aliases from aliases/.
 |   ├── functions/          # Directory for individual shell functions
-|   └── functions.sh        # Orchestrator script to load functions from functions/.
+|   └── init.sh             # Orchestrator script to load standalone shell scripts and scripts inside subdirectories.
 ├── git/                    # Git-specific configurations.
 │   └── gitmessage.txt
 └── ...                     # Other configurations (e.g., VS Code, Docker, terminal emulators).

@@ -1,0 +1,6 @@
+coreutils
+devenv
+dotglob
+findutils
+nullglob
+procps
